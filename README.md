@@ -51,6 +51,24 @@ the signal into windows of time and runs a Fourier transform on each window, pre
 ### Conv1D with Bi-LSTMs: RNN is a series of neural networks dedicated to processing sequence data. Several applications use RNN architecture, such as gated recurrent unit (GRU) and long short-term memory (LSTM), has been found to deliver the most advanced performance [38], including machine translation, speech recognition, and image captioning. Heart sound signal is a time series data with strong time correlation; therefore, it can be managed appropriately by RNN. In reality, these are proven to be incredibly useful, and they're frequently employed to classify heart sounds. RNN accepts input in the form of a one-dimensional heart sound signal x(t) =
 (x1, XT) and, at the current time t, the hidden information or memory of the computing network, ht, in the use of RNN-based heart sound analysis methods. Use ht1 as the previous state and xt as the input signal. The output vector is projected onto the probability corresponding to the number of heart sound categories using the SoftMax function.
 
+## Analysis of other Vitals:
+
+In the third analysis, we used the patient's vital signs, such as heartbeat, serum cholesterol, low ST pressure, the number of main blood vessels colored by fluoroscopy, age, height, systolic and diastolic blood pressure, etc., to predict CAD. In addition, the main contribution of this research shows an effective method for predicting the risk of cardiac arrest by analyzing various benchmark datasets.
+
+## Ensemble Model Results:
+
+The proposed CAD detection approach combines the above three models to build an ensemble model through score-level fusion. The weight values in (6) are identified using the procedure specified in the subsection-III(D). The supervised classifier predicting the final result, uses a simple technique which assigns weightage to separate models according to its individual recall score performance. Further, probabilities of individual models are multiplied with this assigned weightage
+score and then is summer across respective classes. Next, the weighted addition is normalized by taking the average and then final results are predicted from this normalized score.  
+
+## Pseudo Sampling Technique for Ensemble Learning:
+
+Due to the limitations on availability of all three types of data corresponding to a single patient, synthesis of pseudo database from existing database was necessary in order to accomplish goal of this paper. In this method, random samples for both classes were taken from all three separate databases available and this single unit was declared as the data corresponding to a single patient according to the appropriate label. By creating this pseudo database, it was inferred that, ensemble of all three models yields optimized recall score. This process was made iterative to generate minimal amount of data required for testing. The CAD detection performance of the ensemble model is demonstrated in Table VI, where the recall score is 0.95, which is higher than the individual performances of all three models proposed in this paper. The confusion matrix return by the ensemble model.
+
+## CONCLUSION
+
+The proposed method presented an exhaustive overview of the techniques, which can be employed for detecting CADs via a deep learning based approach. Automated analysis and classification of PCG signals and ECG images without the presence of any subject matter expert (SME) is a crucial task. Thus, developing reliable and robust systems, susceptible to noise, becomes essential. The classification of heartbeats has always been the main research area, with the purpose of distinguishing between normal and abnormal heart sounds. Varieties in beat sufficiency, recurrence(frequency) and span make PCG a complicated sign for programmed examination. This paper outlines the current state-of-the-art technology on the subject. ECG images, however, are in a standard format but require SMEs to infer from a report. This work attempts to neutralize the need for SMEs to infer from an ECG report. Although, these proposed methods come with additional computing costs and algorithmic complexities. Consequently, primary features like amplitude, pulse rate, diagnosis of SME from the medical domain continue to sustain. The proposed methods are enhanced with the help of machine learning to supplement existing methods and provide better classification performance.
+
+
 
 ## Results
 
