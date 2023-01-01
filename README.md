@@ -1,4 +1,4 @@
-<h1 align="center">Sea-thru-Heart</h1> <br>
+<h1 align="center">Coronary Artery Disease Prediction using Ensemble of Electrocardiogram and Phonocardiogram with other Vitals</h1> <br>
 
 
 ## Table of Contents 
